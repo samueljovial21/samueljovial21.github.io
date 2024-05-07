@@ -1090,6 +1090,11 @@ section {
   text-align: center;
 }
 
+#footer .lastUpdated {
+  text-align: center;
+  font-size: 75%;
+}
+
 #footer .credits {
   padding-top: 5px;
   text-align: center;
