@@ -379,30 +379,61 @@ section {
 }
 
 .button-container {
-  display: flex; /* Use flexbox to keep buttons inline */
-  gap: 16px; /* Space between buttons */
+  display: flex;
+  /* Use flexbox to keep buttons inline */
+  gap: 16px;
+  /* Space between buttons */
 }
+
 .custom-button {
   /* Base styling for the buttons */
-  padding: 8px 16px; /* Vertical and horizontal padding */
-  border: 2px solid  #149ddd; /* Thick black border */
-  background-color: white; /* White background */
-  color:  #262626; /* Black text color */
-  font-size: 1rem; /* Large text size */
-  font-weight: bold; /* Bold text */
-  border-radius: 50px; /* Fully rounded corners (pill shape) */
-  cursor: pointer; /* Indicate it's clickable */
-  transition: background-color 0.2s, color 0.2s; /* Smooth transition for hover effects */
-  display: inline-flex; /* Ensures content is centered and takes minimal space */
-  align-items: center;   /* Vertically centers text within the button */
-  justify-content: center; /* Horizontally centers text within the button */
-  text-decoration: none; /* Remove underline for anchor tags */
-  min-width: 18px; /* Ensures a consistent minimum width for both buttons */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  padding: 8px 16px;
+  /* Vertical and horizontal padding */
+  border: 2px solid #149ddd;
+  /* Thick black border */
+  background-color: white;
+  /* White background */
+  color: #262626;
+  /* Black text color */
+  font-size: 1rem;
+  /* Large text size */
+  font-weight: bold;
+  /* Bold text */
+  border-radius: 50px;
+  /* Fully rounded corners (pill shape) */
+  cursor: pointer;
+  /* Indicate it's clickable */
+  transition: background-color 0.2s, color 0.2s;
+  /* Smooth transition for hover effects */
+  display: inline-flex;
+  /* Ensures content is centered and takes minimal space */
+  align-items: center;
+  /* Vertically centers text within the button */
+  justify-content: center;
+  /* Horizontally centers text within the button */
+  text-decoration: none;
+  /* Remove underline for anchor tags */
+  min-width: 18px;
+  /* Ensures a consistent minimum width for both buttons */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
   text-align: center;
 }
+
 .custom-button:hover {
-  background-color: #e0e0e0; /* Slightly darker background on hover */
+  background-color: #e0e0e0;
+  /* Slightly darker background on hover */
+}
+
+.custom-button svg {
+  margin-right: 8px;
+  /* Space between icon and text */
+  width: 24px;
+  /* Icon width */
+  height: 24px;
+  /* Icon height */
+  fill: currentColor;
+  /* Makes the SVG icon inherit the text color */
 }
 
 /*--------------------------------------------------------------
