@@ -488,9 +488,9 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
-.skills .progress {
+/* .skills .progress {
   height: 60px;
   display: block;
   background: none;
@@ -522,6 +522,71 @@ section {
   height: 10px;
   transition: 0.9s;
   background-color: #149ddd;
+} */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+  /* Ini akan memberikan jarak di bawah setiap grid */
+}
+
+.skill-item {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-top: 4px solid #007bff;
+}
+
+.skill-item:hover {
+  transform: translateY(-10px);
+}
+
+.skill-item:hover .skill-icon {
+  color: #ff9800;
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+
+/* Default (desktop) */
+.skill-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  /* bikin tebal */
+  color: #333;
+  /* abu tua biar nggak hitam pekat */
+}
+
+/* HP / layar kecil */
+@media (max-width: 768px) {
+  .skill-item h3 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+/* Default (desktop) */
+.skill-item p {
+  font-size: 14px;
+}
+
+/* HP / layar kecil */
+@media (max-width: 768px) {
+  .skill-item p {
+    font-size: 12px;
+  }
+}
+
+.skill-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--random-color, #007bff); /* default kalau JS belum jalan */
 }
 
 /*--------------------------------------------------------------
