@@ -474,6 +474,32 @@ section {
   /* Makes the SVG icon inherit the text color */
 }
 
+/* Perbesar ikon download */
+.button-container .custom-button svg {
+  width: 28px;   /* Ukuran lebih besar */
+  height: 28px;  /* Ukuran lebih besar */
+  margin-right: 10px; /* Jarak dengan teks */
+}
+
+/* Responsif untuk layar mobile */
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column; /* Tombol jadi bertumpuk */
+    gap: 12px; /* Jarak antar tombol */
+  }
+
+  .button-container .custom-button {
+    width: 100%; /* Tombol jadi full width di mobile */
+    justify-content: center; /* Teks dan ikon di tengah */
+  }
+
+  .button-container .custom-button svg {
+    width: 24px;  /* Sedikit kecil biar pas di layar kecil */
+    height: 24px;
+    margin-right: 8px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Facts
 --------------------------------------------------------------*/
