@@ -378,12 +378,50 @@ section {
   margin-bottom: 0;
 }
 
+.content p {
+  text-align: justify;
+}
+
 .button-container {
   display: flex;
-  /* Use flexbox to keep buttons inline */
+  justify-content: space-between;
+  /* Pisahkan tombol kiri & kanan */
+  align-items: center;
+  /* Supaya vertikalnya sejajar */
   gap: 16px;
-  /* Space between buttons */
+  /* Jaga jarak minimal kalau dibutuhkan */
+  width: 100%;
+  /* Pastikan full parent */
 }
+
+.button-container a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  /* Jarak antara icon dan teks */
+  padding: 10px 18px;
+  background-color: #149ddd;
+  /* Warna utama tombol */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  /* Efek smooth */
+  width: 50%;
+}
+
+/* Hover Effect */
+.button-container a:hover {
+  background-color: #117ab8;
+  /* Warna lebih gelap */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  /* Sedikit terangkat */
+}
+
 
 .custom-button {
   /* Base styling for the buttons */
@@ -586,7 +624,8 @@ section {
 .skill-icon {
   font-size: 32px;
   margin-bottom: 10px;
-  color: var(--random-color, #007bff); /* default kalau JS belum jalan */
+  color: var(--random-color, #007bff);
+  /* default kalau JS belum jalan */
 }
 
 /*--------------------------------------------------------------
@@ -964,187 +1003,84 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Contact
+# Contact Section Styling
 --------------------------------------------------------------*/
 .contact {
   padding-bottom: 130px;
 }
 
 .contact .info {
-  padding: 30px;
-  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   width: 100%;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 
-.contact .info i {
-  font-size: 20px;
+/* Kotak info */
+.contact .info .info-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 65px;
+}
+
+.contact .info .info-box:hover {
+  background: #003366;
+  box-shadow: 0 6px 18px rgba(20, 157, 221, 0.4);
+  transform: translateY(-3px);
+}
+
+.contact .info .info-box:hover h4,
+.contact .info .info-box:hover p {
+  color: #fff;
+}
+
+.contact .info .info-box:hover i {
+  color: #003366;
+}
+
+/* Icon di sebelah kiri */
+.contact .info .info-box i {
+  font-size: 22px;
   color: #149ddd;
-  float: left;
-  width: 44px;
-  height: 44px;
   background: #dff3fc;
+  padding: 10px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
   transition: all 0.3s ease-in-out;
+  flex-shrink: 0;
 }
 
-.contact .info h4 {
-  padding: 0 0 0 60px;
-  font-size: 22px;
+/* Teks dalam kotak */
+.contact .info .info-box .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.3;
+}
+
+/* Judul kontak */
+.contact .info .info-box h4 {
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 5px;
   color: #050d18;
+  margin: 0;
 }
 
-.contact .info p {
-  padding: 0 0 10px 60px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #173b6c;
-}
-
-.contact .info .email p {
-  padding-top: 5px;
-}
-
-.contact .info .social-links {
-  padding-left: 60px;
-}
-
-.contact .info .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #333;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-  margin-right: 10px;
-}
-
-.contact .info .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
-}
-
-.contact .info .email:hover i,
-.contact .info .address:hover i,
-.contact .info .phone:hover i {
-  background: #149ddd;
-  color: #fff;
-}
-
-.contact .php-email-form {
-  width: 100%;
-  padding: 30px;
-  background: #fff;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-}
-
-.contact .php-email-form .form-group {
-  padding-bottom: 8px;
-}
-
-.contact .php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
+/* Keterangan kontak */
+.contact .info .info-box p {
   font-size: 13px;
-}
-
-.contact .php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .error-message br+br {
-  margin-top: 25px;
-}
-
-.contact .php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  animation: animate-loading 1s linear infinite;
-}
-
-.contact .php-email-form .form-group {
-  margin-bottom: 15px;
-}
-
-.contact .php-email-form label {
-  padding-bottom: 8px;
-}
-
-.contact .php-email-form input,
-.contact .php-email-form textarea {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-}
-
-.contact .php-email-form input {
-  height: 44px;
-}
-
-.contact .php-email-form textarea {
-  padding: 10px 15px;
-}
-
-.contact .php-email-form button[type=submit] {
-  background: #149ddd;
-  border: 0;
-  padding: 10px 24px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: #37b3ed;
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  color: #173b6c;
+  margin: 2px 0 0 0;
 }
 
 /*--------------------------------------------------------------
