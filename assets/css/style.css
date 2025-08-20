@@ -551,6 +551,14 @@ section {
   color: #1f5297;
 }
 
+.facts .count-box span::after {
+  content: "+";
+  font-size: 48px;
+  font-weight: bold;
+  color: #050d18; /* Warna sesuai ikonmu */
+  margin-left: 3px; /* Jarak antara angka dan tanda + */
+}
+
 /*--------------------------------------------------------------
 # Skills
 --------------------------------------------------------------*/
