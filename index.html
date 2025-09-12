@@ -808,7 +808,7 @@
     <div class="container">
 
       <div class="lastUpdated">
-        Last updated on August 19th 2025
+        Last updated on <span id="last-updated">memuat...</span>
       </div>
       <div class="credits">
         <div class="copyright">
@@ -839,6 +839,50 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Ambil Tanggal Last Commit Repositori sebagai status last updated website -->
+  <script>
+    // Ganti dengan username dan nama repo Anda
+    const username = 'samueljovial21';
+    const repoName = 'samueljovial21.github.io';
+
+    // Elemen target untuk menampilkan tanggal
+    const updateElement = document.getElementById('last-updated');
+
+    // Fungsi untuk mendapatkan akhiran tanggal (st, nd, rd, th)
+    function getOrdinalSuffix(day) {
+      if (day > 3 && day < 21) return 'th'; // untuk 4-20
+      switch (day % 10) {
+        case 1: return "st";
+        case 2: return "nd";
+        case 3: return "rd";
+        default: return "th";
+      }
+    }
+
+    // Mengambil data dari GitHub API
+    fetch(`https://api.github.com/repos/${username}/${repoName}/commits?per_page=1`)
+      .then(response => response.json())
+      .then(data => {
+        // Mengambil tanggal dari commit terakhir
+        const lastCommitDate = new Date(data[0].commit.committer.date);
+
+        // Mendapatkan komponen tanggal
+        const month = lastCommitDate.toLocaleString('en-US', { month: 'long' });
+        const day = lastCommitDate.getDate();
+        const year = lastCommitDate.getFullYear();
+
+        // Menggabungkan menjadi format yang diinginkan
+        const formattedDate = `${month}, ${day}${getOrdinalSuffix(day)}, ${year}`;
+
+        // Tampilkan tanggal di halaman
+        updateElement.textContent = formattedDate;
+      })
+      .catch(error => {
+        console.error('Error fetching last commit date:', error);
+        updateElement.textContent = 'Failed to load date.';
+      });
+  </script>
 
 </body>
 
