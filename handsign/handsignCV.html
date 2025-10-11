@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Jovial Pardede, S.Kom. - Tanda Tangan Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Samuel Jovial</a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container content-wrapper">
+                <div class="profile-card">
+                    <img src="assets/img/profile-img2.jpg" alt="Foto Profil Samuel Jovial Pardede" class="profile-pic">
+                    <h1>Samuel Jovial Pardede, S.Kom.</h1>
+                    <p class="title">Handsign Verificator | Informatics Engineer</p>
+                    <a href="#about" class="btn primary-btn">About Me</a>
+                </div>
+                <div class="verification-card">
+                    <i class="fas fa-check-circle verification-icon"></i>
+                    <h2>HANDSIGN VERIFICATION</h2>
+                    <p>This website serves as a guarantor of the authenticity of the digital signature of Samuel Jovial
+                        Pardede, S.Kom.</p>
+                    <p>The document you are using is a:</p>
+                    <h3>"Curriculum Vitae"</h3>
+                    <div class="qr-code-placeholder">
+                        <img src="assets/img/CV QR Code.png"
+                            alt="QR Code Verifikasi">
+                        <p class="small-text">Make sure its the same QR Code</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Samuel Jovial Pardede, S.Kom.</h2>
+                <p>"Sam's an IoT Engineer passionate about designing and developing smart solutions through embedded
+                    systems,
+                    sensors, and connectivity technologies. Experienced in building IoT-based prototypes, from concept
+                    to
+                    deployment, using microcontrollers and wireless communication technologies."</p>
+                <p></p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Hubungi Saya</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: <a
+                            href="mailto:samueljpdd@gmail.com">samueljpdd@gmail.com</a></p>
+                    <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/samuel-jovial-pardede/"
+                            target="_blank">linkedin.com/in/samuel-jovial-pardede</a></p>
+                    <p><i class="fas fa-globe"></i> Website: <a href="https://samueljovial21.github.io/"
+                            target="_blank">Sam's Personal Web</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Samuel Jovial Pardede, S.Kom.</p>
+            <p>All rights reserverd</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

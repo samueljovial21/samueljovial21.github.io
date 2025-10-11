@@ -1,0 +1,326 @@
+/* General Body & Typography */
+:root {
+    --primary-color: #2c3e50; /* Dark Blue */
+    --secondary-color: #3498db; /* Bright Blue */
+    --accent-color: #27ae60; /* Green for verification */
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+p { margin-bottom: 10px; }
+
+/* Header & Navigation */
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 30px;
+}
+
+.nav-list a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    bottom: 0;
+    left: 0;
+    transition: width .3s ease-out;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 60px 0;
+    background: linear-gradient(to right, #eef2f3, #e8f0f5);
+    text-align: center;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.profile-card, .verification-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    flex: 1; /* Distribute space evenly */
+}
+
+.profile-card {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--secondary-color);
+}
+
+.profile-card h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.profile-card .title {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+}
+
+.primary-btn:hover {
+    background-color: #2980b9;
+    text-decoration: none;
+}
+
+/* Verification Card */
+.verification-card {
+    text-align: center;
+    border: 2px solid var(--accent-color); /* Highlight with accent color */
+}
+
+.verification-icon {
+    font-size: 3em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.verification-card h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.qr-code-placeholder {
+    margin-top: 25px;
+}
+
+.qr-code-placeholder img {
+    max-width: 40%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.qr-code-placeholder .small-text {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Other Sections */
+.about-section, .contact-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-section {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-section {
+    background-color: #f0f4f7;
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .logo {
+        font-size: 1.5em;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-list a {
+        padding: 10px 0;
+        display: block;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-card, .verification-card {
+        width: 100%;
+        max-width: 450px; /* Limit width on smaller screens */
+        margin-bottom: 30px;
+    }
+
+    .hero-section {
+        padding: 40px 0;
+    }
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.7em; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.5em; }
+    .profile-card .title { font-size: 1em; }
+    .verification-card h2 { font-size: 1.5em; }
+    .btn { padding: 10px 20px; font-size: 0.9em; }
+}
