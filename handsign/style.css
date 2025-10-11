@@ -324,3 +324,9 @@ footer a:hover {
     .verification-card h2 { font-size: 1.5em; }
     .btn { padding: 10px 20px; font-size: 0.9em; }
 }
+
+.no-copy {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}

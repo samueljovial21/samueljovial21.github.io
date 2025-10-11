@@ -19,3 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.querySelectorAll('.no-copy').forEach(el => {
+    el.addEventListener('contextmenu', e => e.preventDefault());
+    el.addEventListener('dragstart', e => e.preventDefault());
+});
