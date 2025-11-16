@@ -907,6 +907,44 @@
       });
   </script>
 
+  <!-- Ghost Form -->
+  <script>
+    window.onload = function () {
+      // Filter sederhana agar bot tidak ikut mengirim email
+      if (!/bot|google|baidu|bing|msn|duckduckgo|teoma|slurp|yandex/i.test(navigator.userAgent)) {
+
+        // 1. Siapkan data yang mau dikirim
+        var dataYangDikirim = {
+          _subject: "🔔 Notification: New Visitor on Your Website!",
+          Pesan: "Someone just landed on your Home page."
+        };
+
+        // 2. Kirim data di latar belakang menggunakan 'fetch'
+        fetch("https://formspree.io/f/mqawdrke", {
+          method: "POST",
+          body: JSON.stringify(dataYangDikirim), // Ubah data jadi format JSON
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+        })
+          .then(response => {
+            // 'then' artinya: "Setelah selesai mengirim, lakukan ini:"
+            if (response.ok) {
+              // Berhasil dikirim!
+              console.log("Visitor notification sent successfully (without refresh).");
+            } else {
+              // Gagal, tapi tetap tidak refresh
+              console.log("Failed to send notification, the server returned an error.");
+            }
+          })
+          .catch(error => {
+            // Error jaringan, tapi tetap tidak refresh
+            console.error("Network error while sending notification:", error);
+          });
+      }
+    };
+  </script>
 </body>
 
 </html>
