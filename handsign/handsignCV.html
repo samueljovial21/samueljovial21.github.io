@@ -113,40 +113,28 @@
     </script>
 
     <!-- Ghost Form -->
+    <!-- Google Apps Script -->
     <script>
         window.onload = function () {
-            // Filter sederhana agar bot tidak ikut mengirim email
-            if (!/bot|google|baidu|bing|msn|duckduckgo|teoma|slurp|yandex/i.test(navigator.userAgent)) {
+            var scriptURL = "https://script.google.com/macros/s/AKfycbzPrF3BugSMuC3SNIlbeo4VB3u5Rv8tTBw8PS_6FKKAE8IKSZXk47KwiAHWyh-wENZJ/exec";
 
-                // 1. Siapkan data yang mau dikirim
-                var dataYangDikirim = {
+            // --- 1. NOTIFIKASI KUNJUNGAN ---
+            if (!/bot|google|baidu|bing|msn|duckduckgo|teoma|slurp|yandex/i.test(navigator.userAgent)) {
+                var dataKunjungan = {
                     _subject: "🔔 NOTIFICATION: New Visitor on Your Website!",
                     Pesan: "Someone just landed on your HS CV page."
                 };
 
-                // 2. Kirim data di latar belakang menggunakan 'fetch'
-                fetch("https://formspree.io/f/mqawdrke", {
+                fetch(scriptURL, {
                     method: "POST",
-                    body: JSON.stringify(dataYangDikirim), // Ubah data jadi format JSON
+                    body: JSON.stringify(dataKunjungan),
+                    mode: "no-cors",
                     headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'text/plain'
                     }
                 })
-                    .then(response => {
-                        // 'then' artinya: "Setelah selesai mengirim, lakukan ini:"
-                        if (response.ok) {
-                            // Berhasil dikirim!
-                            console.log("Visitor notification sent successfully (without refresh).");
-                        } else {
-                            // Gagal, tapi tetap tidak refresh
-                            console.log("Failed to send notification, the server returned an error.");
-                        }
-                    })
-                    .catch(error => {
-                        // Error jaringan, tapi tetap tidak refresh
-                        console.error("Network error while sending notification:", error);
-                    });
+                    .then(() => console.log("Visit notification sent to Google Script."))
+                    .catch(error => console.error("Error:", error));
             }
         };
     </script>
