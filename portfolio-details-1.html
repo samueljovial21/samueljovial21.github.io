@@ -212,6 +212,10 @@
       </div>
   </footer><!-- End  Footer -->
 
+  <a href="#" class="theme-toggle-floating" id="theme-toggle" title="Toggle Dark Mode">
+    <i class="bx bx-moon"></i>
+  </a>
+
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
@@ -229,6 +233,32 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <!-- Dark Mode Toggle -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('i');
+    const body = document.body;
+
+    // Cek apakah user sebelumnya sudah memilih dark mode dari localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      themeIcon.classList.replace('bx-moon', 'bx-sun');
+    }
+
+    themeToggleBtn.addEventListener('click', (e) => {
+      e.preventDefault(); // Mencegah link jump ke atas
+      body.classList.toggle('dark-mode');
+
+      // Ganti Icon dan Simpan Preferensi
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.classList.replace('bx-moon', 'bx-sun');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeIcon.classList.replace('bx-sun', 'bx-moon');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 </body>
 
 </html>

@@ -153,7 +153,7 @@ h6 {
   }
 }
 
-#header .profile a svg{
+#header .profile a svg {
   padding-bottom: 5px;
 }
 
@@ -480,25 +480,33 @@ section {
 
 /* Perbesar ikon download */
 .button-container .custom-button svg {
-  width: 28px;   /* Ukuran lebih besar */
-  height: 28px;  /* Ukuran lebih besar */
-  margin-right: 10px; /* Jarak dengan teks */
+  width: 28px;
+  /* Ukuran lebih besar */
+  height: 28px;
+  /* Ukuran lebih besar */
+  margin-right: 10px;
+  /* Jarak dengan teks */
 }
 
 /* Responsif untuk layar mobile */
 @media (max-width: 600px) {
   .button-container {
-    flex-direction: column; /* Tombol jadi bertumpuk */
-    gap: 12px; /* Jarak antar tombol */
+    flex-direction: column;
+    /* Tombol jadi bertumpuk */
+    gap: 12px;
+    /* Jarak antar tombol */
   }
 
   .button-container .custom-button {
-    width: 100%; /* Tombol jadi full width di mobile */
-    justify-content: center; /* Teks dan ikon di tengah */
+    width: 100%;
+    /* Tombol jadi full width di mobile */
+    justify-content: center;
+    /* Teks dan ikon di tengah */
   }
 
   .button-container .custom-button svg {
-    width: 24px;  /* Sedikit kecil biar pas di layar kecil */
+    width: 24px;
+    /* Sedikit kecil biar pas di layar kecil */
     height: 24px;
     margin-right: 8px;
   }
@@ -559,8 +567,10 @@ section {
   content: "+";
   font-size: 48px;
   font-weight: bold;
-  color: #050d18; /* Warna sesuai ikonmu */
-  margin-left: 3px; /* Jarak antara angka dan tanda + */
+  color: #050d18;
+  /* Warna sesuai ikonmu */
+  margin-left: 3px;
+  /* Jarak antara angka dan tanda + */
 }
 
 /*--------------------------------------------------------------
@@ -1205,4 +1215,143 @@ section {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+
+
+/*--------------------------------------------------------------
+# Dark Mode Floating Button
+--------------------------------------------------------------*/
+.theme-toggle-floating {
+  position: fixed;
+  top: 15px;
+  /* Jarak dari atas */
+  right: 15px;
+  /* Jarak dari kanan (Desktop) */
+  z-index: 9999;
+  /* Agar selalu berada di lapisan paling atas */
+  background: #149ddd;
+  /* Warna utama (biru) */
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* Membuat bulat */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Sedikit bayangan biar elegan */
+  font-size: 20px;
+}
+
+.theme-toggle-floating:hover {
+  background: #117ab8;
+  /* Warna saat di-hover */
+  color: #fff;
+  transform: scale(1.1);
+  /* Efek membesar sedikit saat di-hover */
+}
+
+/* Penyesuaian Mobile (PENTING) */
+/* Karena di mode mobile ada tombol menu (hamburger) di pojok kanan, 
+   kita geser tombol dark mode ini sedikit ke kiri agar tidak bertumpuk. */
+@media (max-width: 1199px) {
+  .theme-toggle-floating {
+    right: 65px;
+    /* Geser ke kiri tombol hamburger (40px + gap) */
+  }
+}
+
+/*--------------------------------------------------------------
+# Dark Mode Color Styles (Tambahkan ini di paling bawah style.css)
+--------------------------------------------------------------*/
+
+/* 1. Warna Dasar Body saat Dark Mode */
+body.dark-mode {
+  background-color: #121212 !important;
+  /* Pakai !important biar menimpa default */
+  color: #e0e0e0 !important;
+}
+
+/* 2. Mengubah Warna Judul (Heading) */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode .section-title h2,
+body.dark-mode .resume .resume-title,
+body.dark-mode .services .title a,
+body.dark-mode .portfolio-details .portfolio-info h3 {
+  color: #f8f9fa !important;
+}
+
+/* 3. Mengubah Background Section yang tadinya abu-abu muda */
+body.dark-mode .section-bg {
+  background-color: #1e1e1e !important;
+}
+
+/* 4. Warna Teks Paragraf & List */
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li {
+  color: #cccccc;
+}
+
+/* 5. Kartu-kartu (Skills, Contact, Portfolio, Resume) */
+body.dark-mode .skill-item,
+body.dark-mode .contact .info .info-box,
+body.dark-mode .icon-box,
+body.dark-mode .testimonial-item p {
+  background: #2a2a2a !important;
+  border-color: #444;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 6. Penyesuaian Teks Spesifik di dalam Kartu */
+body.dark-mode .skill-item h3,
+body.dark-mode .contact .info .info-box h4,
+body.dark-mode .facts .count-box span,
+body.dark-mode .facts .count-box p,
+body.dark-mode .testimonials .testimonial-item h3 {
+  color: #fff !important;
+}
+
+body.dark-mode .contact .info .info-box p,
+body.dark-mode .icon-box .description {
+  color: #b0b0b0 !important;
+}
+
+/* 7. Resume Item Border & Bullet */
+body.dark-mode .resume .resume-item {
+  border-left: 2px solid #149ddd;
+}
+
+body.dark-mode .resume .resume-item::before {
+  background: #121212;
+  border-color: #149ddd;
+}
+
+body.dark-mode .resume .resume-item h5 {
+  background: #333;
+  color: #149ddd;
+}
+
+/* 8. Breadcrumbs (Halaman Detail Portfolio) */
+body.dark-mode .breadcrumbs {
+  background: #1e1e1e;
+}
+
+/* 9. Portfolio Details Box */
+body.dark-mode .portfolio-info {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+/* Khusus mengubah warna Angka dan tanda + saat Dark Mode */
+body.dark-mode .facts .count-box span,
+body.dark-mode .facts .count-box span::after {
+  color: #ffffff !important;
 }
